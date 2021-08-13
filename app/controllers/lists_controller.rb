@@ -9,7 +9,6 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
-    @movies = Movie.all
   end
 
   def create

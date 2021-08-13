@@ -2,8 +2,26 @@
 <p>Find me in app/views/lists/show.html.erb</p>
 
 <h1><%= @list.name %></h1>
+<% @list.bookmarks.each do |bookmark| %>
+<div class="movies-container">
+<div class="movie">
+<div class="card-trip">
+  <%= image_tag bookmark.movie.poster_url , alt: "Poster" %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%=bookmark.movie.title %></h2>
+      <p><%=bookmark.movie.overview %></p>
+    </div>
+    <h2 class="card-trip-pricing">Rating: <%= bookmark.movie.rating %></h2>
+  </div>
+</div>
+</div>
+</div>
 
+<% end %>
  <%= link_to 'Edit the List', edit_list_path %>
+ <%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
+
 
  <%= link_to "Remove",
                   list_path(@list),
