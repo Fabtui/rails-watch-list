@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'lists/index'
+  get 'lists/show'
+  get 'lists/new'
+  root to: 'lists#index'
   resources :movies do
     resources :bookmarks
   end
