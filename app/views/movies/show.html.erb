@@ -1,13 +1,34 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+ <div class="navbar navbar-expand-sm navbar-light navbar-movie">
+<h1 class="navbar-title"><%= @movie.title %></h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class="card-trip">
-  <%= image_tag @movie.poster_url , alt: "Poster" %>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @movie.title %></h2>
-      <p><%= @movie.overview %></p>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+        <%= link_to 'Back', lists_path %>
+      </li>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="movie-show">
+  <div class="movie-poster">
+    <%= image_tag @movie.poster_url , alt: "Poster" %>
+  </div>
+  <div class="movie-infos">
+      <h2><%= @movie.overview %></h2>
+      <div class="movie-rating">
+        <% (@movie.rating.to_i).times do %>
+        <div class="star">
+          <h2><i class="fas fa-star"></i></h2>
+        </div>
+        <% end %>
     </div>
-    <h2 class="card-trip-pricing">Rating: <%= @movie.rating %></h2>
   </div>
 </div>
