@@ -14,17 +14,10 @@ class BookmarksController < ApplicationController
     end
   end
 
-  def edit
-    @list = List.find(params[:list_id])
-    @bookmark = Bookmark.find(params[:list_id])
-  end
-
-  def update
-    @list = List.find(params[:list_id])
-    @bookmark = Bookmark.find(params[:id])
-    @bookmark.update(bookmark_params)
-
-    # no need for app/views/bookmarks/update.html.erb
+  def destroy
+    @list = List.find(params[:id])
+    @bookmark = Bookmark.find_by_movie_id(params[:list_id])
+    @bookmark.destroy
     redirect_to list_path(@list)
   end
 

@@ -19,9 +19,29 @@ class MoviesController < ApplicationController
     end
   end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.update(movie_params)
+
+    # no need for app/views/movies/update.html.erb
+    redirect_to movie_path(@movie)
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+
+    # no need for app/views/movies/destroy.html.erb
+    redirect_to movies_path
+  end
+
   private
 
   def movie_params
-    params.require(:movie).permit(:id, :title, :poster_url, :overview, :rating)
+    params.require(:movie).permit(:id, :title, :poster_url, :overview, :rating, :year, :youtube_url)
   end
 end

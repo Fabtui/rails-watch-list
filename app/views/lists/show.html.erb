@@ -1,12 +1,24 @@
-<h1 id="title"><%= @list.name %></h1>
+ <div class="navbar navbar-expand-sm navbar-light navbar-movie">
+<h1 class="navbar-title"><%=  @list.name %></h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class="button-container">
-  <button type="button" class="btn btn-primary"><%= link_to 'Edit the List', edit_list_bookmark_path(@list) %></button>
-  <button type="button" class="btn btn-primary"><%= link_to 'Add a movie', new_list_bookmark_path(@list) %></button>
-  <button type="button" class="btn btn-danger"><%= link_to "Remove this list",
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+        <button type="button" class="btn btn-primary"><%= link_to 'Add a movie', new_list_bookmark_path(@list) %></button>
+      </li>
+               <li class="nav-item">
+          <button type="button" class="btn btn-danger"><%= link_to "Remove this list",
                     list_path(@list),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %></button>
+      </li>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="movies-container">
@@ -18,7 +30,7 @@
         <div>
           <h2><%=link_to bookmark.movie.title, movie_path(bookmark.movie.id) %></h2>
           <p><%=bookmark.movie.overview %></p>
-          <h3 id="comment" ><i class="fas fa-comment-dots"></i><%=bookmark.comment %></h3>
+          <h3 id="comment" ><i class="fas fa-comment-dots"> "</i><%=bookmark.comment %>"</h3>
         </div>
         <div class="movie-rating">
           <% (bookmark.movie.rating.to_i).times do %>
@@ -28,7 +40,12 @@
           <% end %>
         </div>
       </div>
-    </div>
+<button type="button" class="btn btn-danger"><%= link_to "Remove from this list",
+                    list_bookmark_path(bookmark.movie.id),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }
+                    %></button>
   </div>
+    </div>
   <% end %>
 </div>

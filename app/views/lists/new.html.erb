@@ -1,6 +1,9 @@
+<div class="new-list-container">
 <h1>Add a new list</h1>
 
 <%= simple_form_for [@list] do |f| %>
   <%= f.input :name %>
+  <%= f.input :poster_url %>
   <%= f.submit "Submit new list", class: "btn btn-primary" %>
 <% end %>
+</div>

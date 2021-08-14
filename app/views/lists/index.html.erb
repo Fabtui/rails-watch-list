@@ -3,11 +3,14 @@
 </div>
 
 <div class="lists-container">
-<% @lists.each do |list| %>
-<div class="list">
-  <h1><%= link_to list.name, list_path(list) %></h1>
+  <% @lists.each do |list| %>
+  <div class="list">
+    <div class="list-img">
+      <%= cl_image_tag(list.poster_url) %>
+    </div>
+    <div class="list-title">
+    <%= link_to list.name, list_path(list) %>
+    </div>
+  </div>
+    <% end %>
 </div>
-<% end %>
-</div>
-
-  <button type="button" class="btn btn-primary"><%= link_to 'Add a new film', new_movie_path %></button>
