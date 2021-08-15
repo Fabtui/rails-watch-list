@@ -43,7 +43,7 @@
           <% end %>
         </div>
       </div>
-<button id="destroy-button" type="button" class="btn btn-danger"><%= link_to "Remove from this list",
+<button id="destroy-button" type="button" class="btn btn-danger hidden"><%= link_to "Remove from this list",
                     list_bookmark_path(bookmark.movie.id),
                     method: :delete,
                     data: { confirm: "Are you sure?" }
