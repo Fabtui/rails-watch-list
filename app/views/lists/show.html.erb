@@ -9,6 +9,9 @@
           <li class="nav-item">
         <button type="button" class="btn btn-primary"><%= link_to 'Add a movie', new_list_bookmark_path(@list) %></button>
       </li>
+                <li class="nav-item">
+        <button type="button" id="edit-button" class="btn btn-success"><%= link_to 'Edit list', "#" %></button>
+      </li>
                <li class="nav-item">
           <button type="button" class="btn btn-danger"><%= link_to "Remove this list",
                     list_path(@list),
@@ -40,7 +43,7 @@
           <% end %>
         </div>
       </div>
-<button type="button" class="btn btn-danger"><%= link_to "Remove from this list",
+<button id="destroy-button" type="button" class="btn btn-danger"><%= link_to "Remove from this list",
                     list_bookmark_path(bookmark.movie.id),
                     method: :delete,
                     data: { confirm: "Are you sure?" }

@@ -6,7 +6,7 @@
   <% @lists.each do |list| %>
   <div class="list">
     <div class="list-img">
-      <%= cl_image_tag(list.poster_url) %>
+      <%= cl_image_tag list.photo.key, crop: :fill %>
     </div>
     <div class="list-title">
     <%= link_to list.name, list_path(list) %>

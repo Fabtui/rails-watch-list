@@ -3,7 +3,7 @@
 
 <%= simple_form_for [@list] do |f| %>
   <%= f.input :name %>
-  <%= f.input :poster_url %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Submit new list", class: "btn btn-primary" %>
 <% end %>
 </div>

@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 import { initSelect2 } from '../components/init_select2';
+import { hiddenButton } from '../components/hiddenbutton';
 
 Rails.start()
 Turbolinks.start()
