@@ -3,6 +3,23 @@
   <button type="button" class="btn btn-danger" id="edit-button"><%= link_to 'Remove a movie', "#" %></button>
 
 <div class="container">
+  <div class="search-container">
+    <div class="search-input">
+    <%= form_tag movies_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a movie"
+      %>
+    </div>
+    <div class="search-button">
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
   <div class="row align-items-start">
 <% @movies.each do |movie| %>
 <div class="col">
