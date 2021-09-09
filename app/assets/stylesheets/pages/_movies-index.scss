@@ -1,0 +1,54 @@
+
+.movie-poster img {
+  height: 600px;
+}
+
+.movie-rating {
+  justify-content: center;
+  padding: 40px 0;
+    display: flex;
+}
+
+.star h2 {
+  color: gold;
+  font-size: 25px;
+}
+
+.movie-body {
+  position: relative;
+  display: flex;
+}
+
+.movie-info {
+  width: 100%;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.movie-overview {
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.movie-img img {
+  height: 200px;
+  overflow: none;
+  object-fit: cover;
+}
+
+.card-title a {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+.movie-delete-button {
+  position: absolute;
+  margin-left: 30px;
+  bottom: 10px;
+}

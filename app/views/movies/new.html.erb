@@ -1,0 +1,9 @@
+<h1>Add a new movie</h1>
+
+<div class="new-list-container">
+<%= simple_form_for [@movie] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :youtube_url %>
+  <%= f.submit "Submit new movie", class: "btn btn-primary" %>
+<% end %>
+</div>

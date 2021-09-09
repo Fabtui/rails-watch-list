@@ -3,9 +3,14 @@
 </div>
 
 <div class="lists-container">
-<% @lists.each do |list| %>
-<div class="list">
-  <h1><%= link_to list.name, list_path(list) %></h1>
-</div>
-<% end %>
+  <% @lists.each do |list| %>
+  <div class="list">
+    <div class="list-img">
+      <%= cl_image_tag list.photo.key, crop: :fill %>
+    </div>
+    <div class="list-title">
+    <%= link_to list.name, list_path(list) %>
+    </div>
+  </div>
+    <% end %>
 </div>
