@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.order("title ASC")
   end
 
   def show
@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
     @movie.title = @movie_api["Title"]
     @movie.overview = @movie_api["Plot"]
     @movie.poster_url = @movie_api["Poster"]
-    if @movie_api["Ratings"][0]["Value"]
+    if @movie_api["Ratings"][0]["Value"].present?
       @movie.rating = @movie_api["Ratings"][0]["Value"]
     end
     @movie.year = @movie_api["Year"]
