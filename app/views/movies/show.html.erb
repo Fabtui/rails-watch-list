@@ -24,17 +24,23 @@
     <%= image_tag @movie.poster_url , alt: "Poster" %>
   </div>
   <div class="movie-infos">
-  <% if @movie.year %>
-  <% end %>
+    <div class="movie-overview">
       <h2><%= @movie.overview %></h2>
-  <h3><%= @movie.year %></h3>
-      <div class="movie-rating">
-        <% (@movie.rating.to_i).times do %>
-        <div class="star">
-          <h2><i class="fas fa-star"></i></h2>
-        </div>
-        <% end %>
     </div>
+  <h3><%= @movie.year %></h3>
+  <h3><%= @movie.genre %></h3>
+  <h3><%= @movie.director %></h3>
+  <h3><%= @movie.actor %></h3>
+  <div class="movie-rating">
+  <% if @movie.rating %>
+    <% rating = @movie.rating %>
+    <% (rating.first(3).to_f.ceil).times do %>
+      <div class="star">
+        <h2><i class="fas fa-star"></i></h2>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
     <div class="youtube">
       <% if @movie.youtube_url %>
       <iframe width="560" height="315" src = "http://www.youtube.com/embed/<%=@movie.youtube_url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

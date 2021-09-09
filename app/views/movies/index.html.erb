@@ -1,7 +1,6 @@
 <h1>Movies</h1>
   <button type="button" class="btn btn-primary"><%= link_to 'Add a new movie', new_movie_path %></button>
-
-
+  <button type="button" class="btn btn-danger" id="edit-button"><%= link_to 'Remove a movie', "#" %></button>
 
 <div class="container">
   <div class="row align-items-start">
@@ -12,7 +11,7 @@
   <div class="movie-img">  <%= image_tag movie.poster_url , alt: "Poster" %></div>
   <div class="movie-info">
     <h5 class="card-title"><%= link_to movie.title, movie_path(movie) %></h5>
-    <div class="movie-delete-button"><%= link_to "Delete",
+    <div class="movie-delete-button hidden" id="destroy-button"><%= link_to "Remove",
             movie_path(movie),
             class: "btn btn-danger",
             method: :delete,

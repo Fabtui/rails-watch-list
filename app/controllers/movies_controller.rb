@@ -17,8 +17,13 @@ class MoviesController < ApplicationController
     @movie.title = @movie_api["Title"]
     @movie.overview = @movie_api["Plot"]
     @movie.poster_url = @movie_api["Poster"]
-    @movie.rating = @movie_api["Value"]
+    if @movie_api["Ratings"][0]["Value"]
+      @movie.rating = @movie_api["Ratings"][0]["Value"]
+    end
     @movie.year = @movie_api["Year"]
+    @movie.actor = @movie_api["Actors"]
+    @movie.director = @movie_api["Director"]
+    @movie.genre = @movie_api["Genre"]
     if @movie.save
       redirect_to movies_path
     else render :new
