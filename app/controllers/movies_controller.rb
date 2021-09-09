@@ -1,6 +1,11 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.order("title ASC")
+    if params[:query].present?
+      sql_query = "movies.title ILIKE :query"
+      @movies = Movie.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @movies = Movie.order("title ASC")
+    end
   end
 
   def show
