@@ -19,8 +19,8 @@ def create_a_movie(url)
   p movie["original_title"]
 end
 
- create_a_movie("https://api.themoviedb.org/3/movie/550?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-    create_a_movie("https://api.themoviedb.org/3/movie/500?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-    create_a_movie("https://api.themoviedb.org/3/movie/670?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-      create_a_movie("https://api.themoviedb.org/3/movie/530?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-      create_a_movie("https://api.themoviedb.org/3/movie/600?api_key=e2c8e4b34d8775e5a745b29fe215157f")
+create_a_movie("https://api.themoviedb.org/3/movie/550?api_key=e2c8e4b34d8775e5a745b29fe215157f")
+create_a_movie("https://api.themoviedb.org/3/movie/500?api_key=e2c8e4b34d8775e5a745b29fe215157f")
+create_a_movie("https://api.themoviedb.org/3/movie/670?api_key=e2c8e4b34d8775e5a745b29fe215157f")
+create_a_movie("https://api.themoviedb.org/3/movie/530?api_key=e2c8e4b34d8775e5a745b29fe215157f")
+create_a_movie("https://api.themoviedb.org/3/movie/600?api_key=e2c8e4b34d8775e5a745b29fe215157f")
