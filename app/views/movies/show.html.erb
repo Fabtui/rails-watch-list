@@ -49,5 +49,7 @@
   </div>
 </div>
 
-<iframe width="560" height="315" src = "http://www.youtube.com/embed/le0BLAEO93g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<%=@movie.youtube_url%>
+<iframe frameborder="0" height="315" scrolling="no" src="https://www.youtube.com/embed/XftabV9S2z0" width="420">
+<iframe width="360" height="203" src = "<%=@movie.youtube_url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="mb-4"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XftabV9S2z0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<%= @movie.youtube_url %>
