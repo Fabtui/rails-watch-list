@@ -1,6 +1,12 @@
-<h1>Movies</h1>
-  <button type="button" class="btn btn-primary"><%= link_to 'Add a new movie', new_movie_path %></button>
-  <button type="button" class="btn btn-danger" id="edit-button"><%= link_to 'Remove a movie', "#" %></button>
+<div class="header">
+  <div class="header-title">
+    <h1>Movies</h1>
+  </div>
+  <div class="header-button">
+    <button type="button" class="btn btn-danger header-btn" id="edit-button"><%= link_to 'Remove a movie', "#" %></button>
+    <button type="button" class="btn btn-primary header-btn"><%= link_to 'Add a new movie', new_movie_path %></button>
+  </div>
+</div>
 
 <div class="container">
   <div class="search-container">

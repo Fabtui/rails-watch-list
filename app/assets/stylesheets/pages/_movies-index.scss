@@ -1,17 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.header-btn {
+  margin: 30px 10px;
+}
 
 .movie-poster img {
   height: 600px;
-}
-
-.movie-rating {
-  justify-content: center;
-  padding: 40px 0;
-    display: flex;
-}
-
-.star h2 {
-  color: gold;
-  font-size: 25px;
 }
 
 .movie-body {
@@ -22,7 +20,11 @@
 .movie-info {
   width: 100%;
   text-align: center;
-  padding: 10px 10px;
+  padding: 6px 10px;
+  h6 {
+  font-size: 16px;
+  margin: 4px;
+  }
 }
 
 .movie-overview {
@@ -49,6 +51,6 @@
 
 .movie-delete-button {
   position: absolute;
-  margin-left: 30px;
+  margin-left: 22px;
   bottom: 10px;
 }
