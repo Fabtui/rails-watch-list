@@ -5,7 +5,7 @@ class Movie < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-                  against: [ :title ],
+                  against: [ :title, :overview, :actor, :director ],
                   using: {
                     tsearch: { prefix: true }
     }

@@ -1,26 +1,14 @@
- <div class="navbar navbar-expand-sm navbar-light navbar-movie">
-<h1 class="navbar-title"><%=  @list.name %></h1>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+ <div class="list-header">
+  <div class="list-header-title">
+    <h1><%= @list.name %></h1>
+  </div>
+  <div class="list-header-buttons">
         <button type="button" class="btn btn-primary"><%= link_to 'Add a movie', new_list_bookmark_path(@list) %></button>
-      </li>
-                <li class="nav-item">
         <button type="button" id="edit-button" class="btn btn-success"><%= link_to 'Edit list', "#" %></button>
-      </li>
-               <li class="nav-item">
-          <button type="button" class="btn btn-danger"><%= link_to "Remove this list",
-                    list_path(@list),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %></button>
-      </li>
-        </div>
-      </li>
-    </ul>
+        <button type="button" class="btn btn-danger"><%= link_to "Remove this list",
+                list_path(@list),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %></button>
   </div>
 </div>
 
@@ -43,12 +31,12 @@
           <% end %>
         </div>
       </div>
-<button id="destroy-button" type="button" class="btn btn-danger hidden"><%= link_to "Remove from this list",
+      <button id="destroy-button" type="button" class="btn btn-danger hidden"><%= link_to "Remove from this list",
                     list_bookmark_path(bookmark.movie.id),
                     method: :delete,
                     data: { confirm: "Are you sure?" }
                     %></button>
-  </div>
     </div>
+  </div>
   <% end %>
 </div>

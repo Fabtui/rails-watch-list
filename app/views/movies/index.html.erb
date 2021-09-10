@@ -3,8 +3,8 @@
     <h1>Movies</h1>
   </div>
   <div class="header-button">
-    <button type="button" class="btn btn-danger header-btn" id="edit-button"><%= link_to 'Remove a movie', "#" %></button>
     <button type="button" class="btn btn-primary header-btn"><%= link_to 'Add a new movie', new_movie_path %></button>
+    <button type="button" class="btn btn-danger header-btn" id="edit-button"><%= link_to 'Remove a movie', "#" %></button>
   </div>
 </div>
 
@@ -27,23 +27,26 @@
 
 <div class="container">
   <div class="row align-items-start">
-<% @movies.each do |movie| %>
-<div class="col">
-<div class="card m-2" style="width: 18rem;" m-4>
-  <div class="movie-body">
-  <div class="movie-img">  <%= image_tag movie.poster_url , alt: "Poster" %></div>
-  <div class="movie-info">
-    <h5 class="card-title"><%= link_to movie.title, movie_path(movie) %></h5>
-    <h6><%= movie.year %></h6>
-    <h6><%= movie.genre %></h6>
-    <div class="movie-delete-button hidden" id="destroy-button"><%= link_to "Remove",
-            movie_path(movie),
-            class: "btn btn-danger",
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+  <% @movies.each do |movie| %>
+    <div class="col">
+      <div class="card m-2" style="width: 18rem;" m-4>
+        <div class="movie-body">
+          <div class="movie-img">  <%= image_tag movie.poster_url , alt: "Poster" %></div>
+            <div class="movie-info">
+              <h5 class="card-title"><%= link_to movie.title, movie_path(movie) %></h5>
+              <h6><%= movie.year %></h6>
+              <h6><%= movie.genre %></h6>
+              <div class="movie-delete-button hidden" id="destroy-button"><%= link_to "Remove",
+                      movie_path(movie),
+                      class: "btn btn-danger",
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+              </div>
             </div>
-            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
-    </div>
-<% end %>
