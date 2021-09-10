@@ -1,7 +1,12 @@
 class MoviesController < ApplicationController
   def index
     if params[:query].present?
-      sql_query = "movies.title ILIKE :query"
+      sql_query = " \
+        movies.title ILIKE :query \
+        OR movies.overview ILIKE :query \
+        OR movies.actor ILIKE :query \
+        OR movies.director ILIKE :query \
+      "
       @movies = Movie.where(sql_query, query: "%#{params[:query]}%")
     else
       @movies = Movie.order("title ASC")
@@ -19,6 +24,9 @@ class MoviesController < ApplicationController
   def create
     create_a_movie(params[:movie][:title])
     @movie = Movie.new
+    if params[:movie][:youtube_url].present?
+      create_youtube_link(params[:movie][:youtube_url])
+    end
     @movie.title = @movie_api["Title"]
     @movie.overview = @movie_api["Plot"]
     @movie.poster_url = @movie_api["Poster"]
@@ -43,7 +51,11 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.update(movie_params)
 
-    # no need for app/views/movies/update.html.erb
+    if movie_params[:youtube_url].present?
+      create_youtube_link(movie_params[:youtube_url])
+      @movie.save
+    end
+
     redirect_to movie_path(@movie)
   end
 
@@ -56,6 +68,12 @@ class MoviesController < ApplicationController
   end
 
   private
+
+  def create_youtube_link(url)
+    pattern = /^(?<youtube>https:\/\/\youtu.be\/)(?<link>.*)$/
+    match_data = url.match(pattern)
+    @movie.youtube_url = match_data[:link]
+  end
 
   def movie_params
     params.require(:movie).permit(:id, :title, :poster_url, :overview, :rating, :year, :youtube_url)
