@@ -11,20 +11,21 @@ const newMovieTest = () => {
         .then((data) => {
 
           // SHOW ALL THE RESULTS
-          // data.Search.forEach((result) => {
-          //   const movieTag = `<li class="list-inline-item">
-          //     <img src="${result.Poster}" alt="">
-          //     <p>${result.Title}</p>
-          //   </li>`;
-          //   results.insertAdjacentHTML("beforeend", movieTag);
-          // });
-
-          // SHOW THE FIRST RESULT
+          results.insertAdjacentHTML("beforeend", `<p>Choose the right title:</p>`);
+          data.Search.forEach((result) => {
             const movieTag = `<li class="list-inline-item">
-              <img src="${data.Search[0].Poster}" alt="">
-              <p>${data.Search[0].Title} - ${data.Search[0].Year}</p>
+              <img src="${result.Poster}" alt="">
+              <p>${result.Title}</p>
             </li>`;
             results.insertAdjacentHTML("beforeend", movieTag);
+          });
+
+          // SHOW THE FIRST RESULT
+        //     const movieTag = `<li class="list-inline-item">
+        //       <img src="${data.Search[0].Poster}" alt="">
+        //       <p>${data.Search[0].Title} - ${data.Search[0].Year}</p>
+        //     </li>`;
+        //     results.insertAdjacentHTML("beforeend", movieTag);
         });
 
     })
