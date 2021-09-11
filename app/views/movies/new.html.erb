@@ -4,6 +4,11 @@
 <%= simple_form_for [@movie] do |f| %>
   <%= f.input :title %>
   <%= f.input :youtube_url, placeholder: "Youtube share link, like https://youtu.be/nPQ7om598OM"  %>
-  <%= f.submit "Submit new movie", class: "btn btn-primary" %>
+  <%= f.submit "Save this movie", class: "btn btn-primary" %>
 <% end %>
+  <hr>
+
+  <button class="btn btn-success" id="test-button">Preview</button>
+<div id="results">
+</div>
 </div>
