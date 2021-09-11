@@ -1,0 +1,24 @@
+#up-arrow-container {
+  position: fixed;
+  right: 20px;
+  top: 50vh;
+  background-color: white;
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.521);
+  transition: 0.4s;
+  z-index: 99;
+  &:hover {
+    cursor: pointer;
+  }
+  i {
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.747);
+  }
+}
+
+.hidden-arrow {
+  transition: 0.4s;
+  transform: translateY(-500px);
+}
