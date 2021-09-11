@@ -10,6 +10,8 @@ import "channels"
 import 'bootstrap';
 import { initSelect2 } from '../components/init_select2';
 import { showDestroyButtons } from '../components/show_destroy_button';
+import { newMovieTest } from '../components/new_movie_test';
+
 
 Rails.start()
 Turbolinks.start()
@@ -18,4 +20,5 @@ ActiveStorage.start()
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
   showDestroyButtons();
+  newMovieTest();
 });
