@@ -24,6 +24,9 @@
 
 .movie-container img{
   height: 300px;
+  &:hover {
+    cursor: grab;
+  }
 }
 
 .card-movie {
