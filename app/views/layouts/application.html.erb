@@ -24,12 +24,7 @@
       <ul class="navbar-nav mr-auto">
       <div class="header__item <%= "header__item--active" if controller_name == "lists" && action_name == "index" %>">
         <li class="nav-item">
-          <%= link_to 'My lists', lists_path %>
-        </li>
-      </div>
-      <div class="header__item <%= "header__item--active" if controller_name == "lists" && action_name == "new" %>">
-        <li class="nav-item">
-          <%= link_to 'New list', lists_new_path %>
+          <%= link_to 'Lists', lists_path %>
         </li>
       </div>
       <div class="header__item <%= "header__item--active" if controller_name == "movies" && action_name == "index" %>">
