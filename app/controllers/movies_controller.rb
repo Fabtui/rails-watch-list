@@ -55,6 +55,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     @movie.update(movie_params)
+    @movie.youtube_url = create_youtube_link(params[:movie][:youtube_url])
     @movie.save
 
     redirect_to movie_path(@movie)
