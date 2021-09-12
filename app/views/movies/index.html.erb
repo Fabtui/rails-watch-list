@@ -36,7 +36,8 @@
               <h5 class="card-title"><%= link_to movie.title, movie_path(movie) %></h5>
               <h6><%= movie.year %></h6>
               <h6><%= movie.genre %></h6>
-              <div class="movie-delete-button hidden" id="destroy-button"><%= link_to "Remove",
+              <div class="movie-delete-button hidden" id="destroy-button">
+              <%= link_to "Remove",
                       movie_path(movie),
                       class: "btn btn-danger",
                       method: :delete,
