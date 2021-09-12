@@ -1,0 +1,13 @@
+<h1><%= "#{pluralize(@seen_movies.count, 'movie')} watched" %></h1>
+<ul>
+<% @seen_movies.each do |movie| %>
+    <li><%= link_to movie.title, movie_path(movie) %></li>
+<% end %>
+</ul>
+
+<h1><%= "#{pluralize(@unseen_movies.count, 'movie')} not watched" %></h1>
+<ul>
+<% @unseen_movies.each do |movie| %>
+    <li><%= link_to movie.title, movie_path(movie) %></li>
+<% end %>
+</ul>
