@@ -3,8 +3,14 @@
     <h1>Movies</h1>
   </div>
   <div class="header-button">
-    <button type="button" class="btn btn-primary header-btn"><%= link_to 'Add a new movie', new_movie_path %></button>
-    <button type="button" class="btn btn-danger header-btn" id="edit-button"><%= link_to 'Remove a movie', "#" %></button>
+    <button type="button" class="btn btn-primary header-btn"><%= link_to new_movie_path do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+    </button>
+    <button type="button" class="btn btn-danger header-btn" id="edit-button"><%= link_to "#" do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+    </button>
   </div>
 </div>
 
@@ -46,11 +52,12 @@
                 </div>
               <% end %>
               <div class="movie-delete-button hidden" id="destroy-button">
-              <%= link_to "Remove",
-                      movie_path(movie),
+              <%= link_to movie_path(movie),
                       class: "btn btn-danger",
                       method: :delete,
-                      data: { confirm: "Are you sure?" } %>
+                      data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
               </div>
             </div>
           </div>
