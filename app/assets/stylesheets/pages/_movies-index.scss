@@ -12,10 +12,6 @@
   }
 }
 
-.movie-poster img {
-  height: 600px;
-}
-
 .movie-body {
   position: relative;
   display: flex;
@@ -57,4 +53,16 @@
   position: absolute;
   margin-left: 22px;
   bottom: 10px;
+}
+
+.index-movie-seen {
+  margin-left: 20%;
+  position: absolute;
+  bottom: 8px;
+}
+
+.index-movie-not-seen {
+  margin-left: 20%;
+  position: absolute;
+  bottom: 8px;
 }

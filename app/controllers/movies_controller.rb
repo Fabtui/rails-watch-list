@@ -50,11 +50,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     @movie.update(movie_params)
-
-    if movie_params[:youtube_url].present?
-      create_youtube_link(movie_params[:youtube_url])
-      @movie.save
-    end
+    @movie.save
 
     redirect_to movie_path(@movie)
   end
@@ -76,7 +72,7 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:id, :title, :poster_url, :overview, :rating, :year, :youtube_url)
+    params.require(:movie).permit(:id, :title, :poster_url, :overview, :rating, :year, :youtube_url, :seen, :seen_date)
   end
 
   def create_a_movie(title)

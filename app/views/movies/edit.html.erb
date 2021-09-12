@@ -1,13 +1,9 @@
-<h1>Edit this movie</h1>
+<h1>Have you seen this movie?</h1>
 
 <div class="new-list-container">
 <%= simple_form_for [@movie] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :overview %>
-  <%= f.input :poster_url %>
-  <%= f.input :year %>
-  <%= f.input :rating %>
-  <%= f.input :youtube_url %>
+  <%= f.input :seen, as: :boolean, label: "Seen" %>
+  <%= f.input :seen_date, as: :date, label: "When?", id: "seen-checkbox" %>
   <%= f.submit "Submit new movie", class: "btn btn-primary" %>
 <% end %>
 </div>
