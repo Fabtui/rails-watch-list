@@ -5,13 +5,18 @@ h1 {
 }
 
 .movie-show {
-  margin: 20px 300px;
+  margin: 24px 24px;
   display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .movie-infos {
   text-align: center;
   padding: 10px 20px;
+  width: 700px;
+  width-min: 560px;
+  flex-grow: 1;
 }
 
 .movie-rating {
@@ -25,6 +30,33 @@ h1 {
   font-size: 25px;
 }
 
-.movie-overview h2 {
+.movie-show-overview {
+  margin-bottom: 30px;
+  padding: 0 10%;
+  h2 {
   font-size: 24px;
+  }
+}
+
+
+.movie-poster {
+  margin-left: 36px;
+  img {
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+.movie-poster {
+  margin-left: 0;
+}
+}
+
+@media only screen and (max-width: 1400px) {
+.movie-poster {
+  margin-left: 36px;
+  img {
+    height: 400px;
+  }
+}
 }
