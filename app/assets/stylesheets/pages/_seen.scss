@@ -1,0 +1,18 @@
+.seen-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.seen-list li, .unseen-list li {
+  list-style-type: none;
+}
+
+.seen-list a, .unseen-list a {
+  color: rgba(0, 0, 0, 0.699);
+  font-size: 20px;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
