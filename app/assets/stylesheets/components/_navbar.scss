@@ -47,3 +47,16 @@
   color: black;
 font-size: 25px;
 }
+
+.nav-item a {
+  color: rgba(0, 0, 0, 0.603);
+  transition: 0.2s;
+  &:hover {
+  color: black;
+  transition: 0.2s;
+  }
+}
+
+.header__item--active a {
+  color: $primary;
+}
