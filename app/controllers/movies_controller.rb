@@ -17,6 +17,11 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
   end
 
+  def seen
+    @seen_movies = Movie.where(seen: true).order("title ASC")
+    @unseen_movies = Movie.where(seen: false).order("title ASC")
+  end
+
   def new
     @movie = Movie.new
   end
