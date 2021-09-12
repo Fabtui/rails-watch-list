@@ -1,0 +1,24 @@
+.movie-seen i {
+  font-size: 36px;
+  margin-top: 24px;
+}
+
+.movie-not-seen i {
+  font-size: 36px;
+  margin-top: 24px;
+}
+
+.movie-seen {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  h3 {
+    margin: 0;
+  }
+}
+
+.movie-seen-icone i {
+  margin-bottom: 60%;
+  margin-right: 8px;
+}

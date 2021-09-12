@@ -2,14 +2,30 @@
   <div class="header-title">
     <h1><%= @movie.title %></h1>
   </div>
+
+<% if @movie.seen %>
+  <div class="movie-seen">
+    <div class="movie-seen-icone">
+      <i class="far fa-eye"></i>
+    </div>
+    <div class="movie-seen-date">
+      <h3><%= "Seen on #{@movie.seen_date.strftime("%Y %m %d")}" %></h3>
+    </div>
+  </div>
+<% else %>
+  <div class="movie-not-seen">
+    <i class="far fa-eye-slash"></i>
+  </div>
+<% end %>
+
   <div class="header-button">
     <button type="button" class="btn btn-success"><%= link_to 'Edit this movie', edit_movie_path %></button>
-      <button type="button" class="btn btn-danger">
-      <%= link_to "Remove",
-              movie_path(@movie),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-      </button>
+    <button type="button" class="btn btn-danger">
+    <%= link_to "Remove",
+            movie_path(@movie),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+    </button>
     <button type="button" class="btn btn-warning"><%= link_to 'Back', movies_path %></button>
   </div>
 </div>
