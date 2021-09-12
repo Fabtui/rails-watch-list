@@ -117,3 +117,21 @@ h3 {
 .hidden {
   display: none;
 }
+
+#addlist a {
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.699);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.39);
+  transition: 0.2s;
+    &:hover {
+    color: black;
+    font-size: 50px;
+    transition: 0.2s;
+  }
+}
+
+#addlist-container {
+  display: flex;
+  align-items: center;
+  background-color: #F4F4F4;
+}
