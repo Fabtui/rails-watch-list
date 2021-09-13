@@ -22,3 +22,17 @@
   margin-bottom: 60%;
   margin-right: 8px;
 }
+
+.fa-youtube:before {
+  color: rgba(255, 0, 0, 0.705);
+  cursor: pointer;
+}
+
+.youtube-edit-button i {
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+.youtube-hidden {
+  display: none;
+}
