@@ -72,9 +72,12 @@ class MoviesController < ApplicationController
   private
 
   def create_youtube_link(url)
-    pattern = /^(?<youtube>https:\/\/\youtu.be\/)(?<link>.*)$/
-    match_data = url.match(pattern)
-    @movie.youtube_url = "https://www.youtube.com/embed/#{match_data[:link]}"
+    url_pattern = /^(https:\/\/youtu.be\/)(.*)$/
+    if url.match?(url_pattern)
+      pattern = /^(?<youtube>https:\/\/\youtu.be\/)(?<link>.*)$/
+      match_data = url.match(pattern)
+      @movie.youtube_url = "https://www.youtube.com/embed/#{match_data[:link]}"
+    end
   end
 
   def movie_params
