@@ -3,7 +3,7 @@
 <div class="new-list-container">
 <%= simple_form_for [@movie] do |f| %>
   <%= f.input :title %>
-  <%= f.input :youtube_url, placeholder: "Youtube share link, like https://youtu.be/nPQ7om598OM"  %>
+  <%= f.input :youtube_url, placeholder: "Youtube share link, like https://youtu.be/nPQ7om598OM", pattern: "/^(https:\/\/youtu.be\/)(.*)$/"  %>
   <%= f.submit "Save this movie", class: "btn btn-primary" %>
 <% end %>
   <hr>
