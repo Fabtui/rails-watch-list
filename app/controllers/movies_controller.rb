@@ -54,8 +54,18 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
+    if @movie.youtube_url.present?
+      youtube_url = @movie.youtube_url
+    end
     @movie.update(movie_params)
-    @movie.youtube_url = create_youtube_link(params[:movie][:youtube_url])
+    if params[:movie][:youtube_url].present?
+      url_pattern = /^(https:\/\/www.youtube.com\/embed\/)(.*)$/
+      if params[:movie][:youtube_url].match?(url_pattern)
+        @movie.youtube_url = params[:movie][:youtube_url]
+      else
+        @movie.youtube_url = create_youtube_link(params[:movie][:youtube_url])
+      end
+    end
     @movie.save
 
     redirect_to movie_path(@movie)

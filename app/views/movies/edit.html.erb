@@ -4,7 +4,18 @@
 <%= simple_form_for [@movie] do |f| %>
   <%= f.input :seen, as: :boolean, label: "Seen" %>
   <%= f.input :seen_date, as: :date, label: "When?", id: "seen-checkbox" %>
-  <%= f.input :youtube_url, placeholder: "Youtube share link, like https://youtu.be/nPQ7om598OM"  %>
+  <div class="youtube-edit-button">
+    <h3>
+      <i class="fab fa-youtube"></i>
+    </h3>
+    <div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+  </div>
+  <div id="youtube-edit" class="youtube-hidden">
+    <%= f.input :youtube_url, placeholder: "Youtube share link, like https://youtu.be/nPQ7om598OM", id:"youtube-edit" %>
+  </div>
+  <hr>
   <%= f.submit "Submit new movie", class: "btn btn-primary" %>
 <% end %>
 </div>
