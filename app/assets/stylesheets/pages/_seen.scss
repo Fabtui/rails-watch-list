@@ -3,6 +3,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  h1 {
+    text-align: center;
+  }
 }
 
 .seen-list li, .unseen-list li {
@@ -15,5 +18,13 @@
   &:hover {
     color: black;
     text-decoration: none;
+  }
+}
+
+.seen-lists-container {
+  display: flex;
+  li {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.699);
   }
 }
