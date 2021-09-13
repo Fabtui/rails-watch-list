@@ -4,14 +4,6 @@
   padding: 0 50px;
 }
 
-.header-button {
-  margin: 20px 0px;
-  text-align: center;
-  button {
-    margin-top: 10px;
-  }
-}
-
 .movie-body {
   position: relative;
   display: flex;
@@ -22,8 +14,8 @@
   text-align: center;
   padding: 6px 10px;
   h6 {
-  font-size: 16px;
-  margin: 4px;
+    font-size: 16px;
+    margin: 4px;
   }
 }
 
@@ -65,4 +57,19 @@
   margin-left: 20%;
   position: absolute;
   bottom: 8px;
+}
+
+.header-button {
+  margin: 20px 0px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #edit-button {
+  margin: 10px 0;
+}
+.header-button button {
+  margin: 0 4px;
+  margin-top: 0;
+}
 }
