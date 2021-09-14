@@ -30,7 +30,11 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  padding: 8px;
+  width: 350px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.301);
 }
 
 .lists-container {
@@ -146,5 +150,17 @@ h3 {
     color: black;
     transform: scale(1.1);
     cursor: grab;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .list-header {
+    h1 {
+      font-size: 24px;
+      margin-right: 0;
+    }
+  }
+  .list-header-buttons {
+    margin: 0 12px;
   }
 }
