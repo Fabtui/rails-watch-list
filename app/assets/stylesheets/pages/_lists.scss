@@ -36,6 +36,7 @@
 .lists-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .list {
@@ -43,6 +44,7 @@
   background-color: black;
   height: auto;
   width: 200px;
+  min-width: 200px;
   margin: 20px;
   justify-content: center;
   text-align: center;
