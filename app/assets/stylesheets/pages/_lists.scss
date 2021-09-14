@@ -24,9 +24,6 @@
 
 .movie-container img{
   height: 300px;
-  &:hover {
-    cursor: grab;
-  }
 }
 
 .card-movie {
@@ -134,4 +131,18 @@ h3 {
   display: flex;
   align-items: center;
   background-color: #F4F4F4;
+}
+
+.list-rating {
+  padding-bottom: 20px;
+}
+
+#handle i {
+  color: rgba(0, 0, 0, 0.699);
+  font-size: 20px;
+  &:hover {
+    color: black;
+    transform: scale(1.1);
+    cursor: grab;
+  }
 }
