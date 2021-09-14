@@ -1,7 +1,13 @@
-h1 {
-  margin: 20px;
-  font-family: helvetica;
-  font-weight: bold;
+.movie-show-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  margin: 32px 0;
+  h1 {
+    margin: 20px;
+    font-family: helvetica;
+    font-weight: bold;
+  }
 }
 
 .movie-show {
@@ -38,18 +44,22 @@ h1 {
   }
 }
 
+.youtube-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.youtube-video {
+  width: 520px;
+  height: 280px;
+}
 
 .movie-poster {
   margin-left: 36px;
   img {
     height: 600px;
   }
-}
-
-@media only screen and (max-width: 600px) {
-.movie-poster {
-  margin-left: 0;
-}
 }
 
 @media only screen and (max-width: 1400px) {
@@ -59,4 +69,42 @@ h1 {
     height: 400px;
   }
 }
+}
+
+@media only screen and (max-width: 900px) {
+  .movie-show-header {
+    padding: 0 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    h1 {
+      font-size: 24px;
+      font-family: helvetica;
+      font-weight: bold;
+    }
+  }
+  .movie-infos {
+  padding: 8px 8px;
+  }
+  .movie-not-seen {
+    margin-right: 8px;
+  }
+  .movie-poster {
+    margin-left: 0;
+  }
+  .movie-show-overview {
+    padding: 0;
+  }
+  .movie-rating {
+    padding: 0;
+    i {
+      font-size: 12px;
+    }
+  }
+  .youtube-video {
+    width: 100%;
+    padding: 0;
+    height: 150px;
+    object-fit: cover;
+  }
 }

@@ -1,4 +1,4 @@
-<div class="header">
+<div class="movie-show-header">
   <div class="header-title">
     <h1><%= @movie.title %></h1>
   </div>
@@ -55,10 +55,12 @@
     <% end %>
   <% end %>
   </div>
-    <div class="youtube">
-      <% if @movie.youtube_url %>
-      <iframe width="560" height="315" src = <%=@movie.youtube_url%> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <% end %>
+    <div class="youtube-container">
+      <div class="youtube-video">
+        <% if @movie.youtube_url %>
+          <iframe width="100%" height="280" src = <%=@movie.youtube_url%> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
