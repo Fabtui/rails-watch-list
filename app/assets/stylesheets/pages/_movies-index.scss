@@ -4,6 +4,15 @@
   padding: 0 50px;
 }
 
+.movie-show-header {
+  h1 {
+    margin: 20px;
+    font-family: helvetica;
+    font-weight: 600;
+  }
+}
+
+
 .movie-body {
   position: relative;
   display: flex;
@@ -60,16 +69,38 @@
 }
 
 .header-button {
-  margin: 20px 0px;
+  margin: 52px 0px;
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
+  .header {
+    padding: 0 8px;
+  }
   #edit-button {
-  margin: 10px 0;
+  margin: 12px 0;
 }
-.header-button button {
-  margin: 0 4px;
-  margin-top: 0;
+  .header-button {
+    margin: 0 4px;
+    button {
+    margin: 0 4px;
+    margin-top: 0;
+    }
+  }
 }
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 0 8px;
+  }
+  #edit-button {
+  margin: 12px 0;
+}
+  .header-button {
+    margin: 0 4px;
+    button {
+    margin: 0 4px;
+    margin-top: 0;
+    }
+  }
 }
