@@ -1,1 +1,20 @@
-<h1>Coucou</h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c1.wallpaperflare.com/preview/570/413/91/interior-theatre-theater-empty-theater.jpg)">
+  <div class="card-category-title">
+    <h1>MY WATCH LIST</h1>
+    <h3>Save your favorite movies</h3>
+  </div>
+</div>
+
+<div class="lists-container">
+  <% @lists.each do |list| %>
+  <div class="list">
+    <div class="list-img">
+      <%= cl_image_tag list.photo.key, crop: :fill %>
+    </div>
+    <div class="list-title">
+    <%= link_to list.name, list_path(list) %>
+    </div>
+  </div>
+    <% end %>
+  </div>
+</div>
