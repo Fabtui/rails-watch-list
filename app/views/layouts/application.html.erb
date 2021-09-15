@@ -17,42 +17,13 @@
 
 <%= render 'shared/navbar' %>
 
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag src="https://image.flaticon.com/icons/png/512/195/195158.png" %>
-    <% end %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-      <div class="header__item <%= "header__item--active" if controller_name == "lists" && action_name == "index" %>">
-        <li class="nav-item">
-          <%= link_to 'Lists', lists_path %>
-        </li>
-      </div>
-      <div class="header__item <%= "header__item--active" if controller_name == "movies" && action_name == "index" %>">
-        <li class="nav-item">
-          <%= link_to 'Movies', movies_path %>
-        </li>
-      </div>
-      <div class="header__item <%= "header__item--active" if controller_name == "movies" && action_name == "seen" %>">
-        <li class="nav-item">
-          <%= link_to 'Watched', movies_seen_path %>
-        </li>
-      </div>
-      </ul>
-    </div>
-  </div>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
   <div id="up-arrow-container" class="hidden-arrow">
     <i class="fas fa-arrow-up"></i>
   </div>
 
     <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   </body>
 </html>
