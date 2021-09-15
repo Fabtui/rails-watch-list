@@ -2,23 +2,25 @@
   <div class="list-header-title">
     <h1><%= @list.name %></h1>
   </div>
-  <div class="list-header-buttons">
-    <div class="btn btn-primary"><%= link_to new_list_bookmark_path(@list) do %>
-      <i class="fas fa-plus"></i>
+  <% if @list.user_id == current_user.id %>
+    <div class="list-header-buttons">
+      <div class="btn btn-primary"><%= link_to new_list_bookmark_path(@list) do %>
+        <i class="fas fa-plus"></i>
+        <% end %>
+      </div>
+        <div id="edit-button" class="btn btn-success"><%= link_to "#" do %>
+        <i class="far fa-edit"></i>
       <% end %>
+      </div>
+      <div class="btn btn-danger" id="remove-movie">
+        <%= link_to list_path(@list),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-trash"></i>
+                <% end %>
+      </div>
     </div>
-      <div id="edit-button" class="btn btn-success"><%= link_to "#" do %>
-      <i class="far fa-edit"></i>
-    <% end %>
-    </div>
-    <div class="btn btn-danger" id="remove-movie">
-      <%= link_to list_path(@list),
-              method: :delete,
-              data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-trash"></i>
-              <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>
 
 <div class="movies-container">

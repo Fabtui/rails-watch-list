@@ -19,8 +19,9 @@ class MoviesController < ApplicationController
   end
 
   def seen
-    @seen_movies = Movie.where(seen: true).order("title ASC")
-    @unseen_movies = Movie.where(seen: false).order("title ASC")
+    @user_movies = Movie.where(user_id: current_user.id)
+    @seen_movies = @user_movies.where(seen: true).order("title ASC")
+    @unseen_movies = @user_movies.where(seen: false).order("title ASC")
   end
 
   def new

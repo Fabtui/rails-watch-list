@@ -29,6 +29,7 @@
           <%= image_tag "https://s1.qwant.com/thumbr/0x380/0/2/b3f2283456afd98cfcad9cf17d8b9c905b58f3077525ea90acdf6b1217f8d4/user-icon-symbol-sign-vector.jpg?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F649%2F115%2Foriginal%2Fuser-icon-symbol-sign-vector.jpg&q=0&b=1&p=0&a=0", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Edit profil", edit_user_registration_path, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
