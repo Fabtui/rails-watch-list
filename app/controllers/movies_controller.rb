@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   def index
+    @user_movies = Movie.where(user_id: current_user.id)
     if params[:query].present?
       sql_query = " \
         movies.title ILIKE :query \
@@ -7,9 +8,9 @@ class MoviesController < ApplicationController
         OR movies.actor ILIKE :query \
         OR movies.director ILIKE :query \
       "
-      @movies = Movie.where(sql_query, query: "%#{params[:query]}%")
+      @movies = @user_movies.where(sql_query, query: "%#{params[:query]}%")
     else
-      @movies = Movie.order("title ASC")
+      @movies = @user_movies.order("title ASC")
     end
   end
 
@@ -18,8 +19,9 @@ class MoviesController < ApplicationController
   end
 
   def seen
-    @seen_movies = Movie.where(seen: true).order("title ASC")
-    @unseen_movies = Movie.where(seen: false).order("title ASC")
+    @user_movies = Movie.where(user_id: current_user.id)
+    @seen_movies = @user_movies.where(seen: true).order("title ASC")
+    @unseen_movies = @user_movies.where(seen: false).order("title ASC")
   end
 
   def new
@@ -42,6 +44,7 @@ class MoviesController < ApplicationController
     @movie.actor = @movie_api["Actors"]
     @movie.director = @movie_api["Director"]
     @movie.genre = @movie_api["Genre"]
+    @movie.user_id = current_user.id
     if @movie.save
       redirect_to movies_path
     else render :new

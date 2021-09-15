@@ -3,7 +3,7 @@
 </div>
 
 <div class="lists-container">
-  <% @lists.each do |list| %>
+  <% @user_lists.each do |list| %>
   <div class="list">
     <div class="list-img">
       <%= cl_image_tag list.photo.key, crop: :fill %>

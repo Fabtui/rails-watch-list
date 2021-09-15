@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_080818) do
+ActiveRecord::Schema.define(version: 2021_09_15_095119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,14 +49,18 @@ ActiveRecord::Schema.define(version: 2021_09_15_080818) do
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["list_id"], name: "index_bookmarks_on_list_id"
     t.index ["movie_id"], name: "index_bookmarks_on_movie_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -73,6 +77,8 @@ ActiveRecord::Schema.define(version: 2021_09_15_080818) do
     t.string "genre"
     t.boolean "seen", default: false
     t.datetime "seen_date"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -86,6 +92,7 @@ ActiveRecord::Schema.define(version: 2021_09_15_080818) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
+    t.string "nickname"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -100,4 +107,7 @@ ActiveRecord::Schema.define(version: 2021_09_15_080818) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "lists"
   add_foreign_key "bookmarks", "movies"
+  add_foreign_key "bookmarks", "users"
+  add_foreign_key "lists", "users"
+  add_foreign_key "movies", "users"
 end
