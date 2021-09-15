@@ -2,8 +2,8 @@
 <h1>Add a new list</h1>
 
 <%= simple_form_for [@list] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :name, required: true %>
+  <%= f.input :photo, as: :file, required: true %>
   <%= f.submit "Submit new list", class: "btn btn-primary" %>
 <% end %>
 </div>
