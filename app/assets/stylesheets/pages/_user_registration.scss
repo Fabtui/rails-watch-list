@@ -1,0 +1,26 @@
+.backlink {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  a {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.705);
+    transition: 0.2s;
+    &:hover {
+      color: black;
+      transition: 0.2s;
+    }
+  }
+}
+
+.delete-account a {
+  color: $danger;
+  transition: 0.2s;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    transition: 0.2s;
+    text-decoration: none;
+    font-weight: 400;
+  }
+}

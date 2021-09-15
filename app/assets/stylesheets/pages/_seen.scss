@@ -1,9 +1,10 @@
 .seen-list-container {
-  padding: 2% 10%;
+  padding: 2% 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   h1 {
+    font-size: 32px;
     text-align: center;
   }
 }
@@ -26,5 +27,55 @@
   li {
     font-size: 20px;
     color: rgba(0, 0, 0, 0.699);
+  }
+}
+
+.seen-list, .unseen-list {
+  padding: 12px 4px;
+  margin-bottom: 12px;
+  width: 800px;
+  min-width: 700px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 960px) {
+  .seen-list, .unseen-list {
+  padding: 12px 20px;
+  ul {
+    padding: 12px;
+  }
+  }
+  .seen-list-container {
+    padding: 12px 4px;
+  }
+  .seen-list a, .unseen-list a {
+    font-size: 20px;
+  }
+  .seen-list li, .unseen-list li {
+    min-width: 190px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .seen-list, .unseen-list {
+    padding: 12px 4px;
+    margin-bottom: 12px;
+    width: 420px;
+    ul {
+      padding: 4px;
+    }
+  }
+  .seen-list-container {
+    padding: 8px;
+    h1 {
+      font-size: 24px;
+    }
+  }
+  .seen-list a, .unseen-list a {
+  font-size: 16px;
+  }
+  .seen-list-date {
+    display: none;
   }
 }

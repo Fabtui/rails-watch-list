@@ -1,6 +1,7 @@
 <div class="seen-list-container">
   <div class="seen-list">
   <h1><%= "#{pluralize(@seen_movies.count, 'movie')} watched" %></h1>
+  <hr>
     <div class="seen-lists-container">
       <div class="seen-list-title">
         <ul>
@@ -20,6 +21,7 @@
   </div>
   <div class="unseen-list">
     <h1><%= "#{pluralize(@unseen_movies.count, 'movie')} not watched" %></h1>
+    <hr>
     <ul>
     <% @unseen_movies.each do |movie| %>
         <li><%= link_to movie.title, movie_path(movie) %></li>
