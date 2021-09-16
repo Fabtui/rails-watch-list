@@ -13,8 +13,13 @@
     <div class="list-img">
       <%= cl_image_tag list.photo.key, crop: :fill %>
     </div>
+    <div class="list-gradient">
+    </div>
     <div class="list-title">
-    <%= link_to list.name, list_path(list) %>
+      <%= link_to list.name.upcase, list_path(list) %>
+    </div>
+    <div class="list-user-nickname">
+      <h3>By <%= list.user.nickname %></h3>
     </div>
   </div>
     <% end %>

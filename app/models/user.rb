@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :lists
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 10 }
 end

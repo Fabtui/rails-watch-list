@@ -1,8 +1,9 @@
 .movie-show-header {
   display: flex;
+  align-items: center;
+  text-align: center;
   justify-content: space-between;
   padding: 0 50px;
-  margin: 32px 0;
   h1 {
     margin: 20px;
     font-family: helvetica;
@@ -10,11 +11,20 @@
   }
 }
 
+#remove-movie {
+
+}
+
 .movie-show {
   margin: 24px 24px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.movie-not-seen {
+  margin-right: 8px;
+  padding-bottom: 20px;
 }
 
 .movie-infos {
@@ -85,9 +95,6 @@
   }
   .movie-infos {
   padding: 8px 8px;
-  }
-  .movie-not-seen {
-    margin-right: 8px;
   }
   .movie-poster {
     margin-left: 0;
