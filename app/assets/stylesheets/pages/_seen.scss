@@ -1,3 +1,7 @@
+.new-list-container-title {
+  margin-bottom: 28px;
+}
+
 .seen-list-container {
   padding: 2% 5%;
   display: flex;
@@ -78,4 +82,10 @@
   .seen-list-date {
     display: none;
   }
+}
+
+@media only screen and (max-width: 600px) {
+.new-list-container-title h1 {
+  font-size: 24px;
+}
 }
