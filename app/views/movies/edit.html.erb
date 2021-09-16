@@ -1,6 +1,7 @@
-<h1>Have you seen this movie?</h1>
-
 <div class="new-list-container">
+  <div class="new-list-container-title">
+    <h1>Have you seen this movie?</h1>
+  </div>
 <%= simple_form_for [@movie] do |f| %>
   <%= f.input :seen, as: :boolean, label: "Seen" %>
   <%= f.input :seen_date, as: :date, label: "When?", id: "seen-checkbox" %>

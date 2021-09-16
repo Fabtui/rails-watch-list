@@ -1,6 +1,6 @@
-<h1>Add a new movie</h1>
 
 <div class="new-list-container">
+<h1>Add a new movie</h1>
 <%= simple_form_for [@movie] do |f| %>
   <%= f.input :title %>
   <%= f.input :youtube_url, placeholder: "Youtube share link, like https://youtu.be/nPQ7om598OM", pattern: "/^(https:\/\/youtu.be\/)(.*)$/"  %>
