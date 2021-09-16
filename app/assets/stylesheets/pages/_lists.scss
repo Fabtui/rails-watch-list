@@ -1,12 +1,29 @@
 .list-header {
-  display: flex;
   justify-content: space-between;
+  display: flex;
 }
 
-.list-header-title h1 {
-  margin: 20px;
-  font-weight: 600;
+.list-header-title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 0 32px;
 }
+
+.list-header-title-title {
+  h1 {
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.list-header-title-nickname {
+  position: relative;
+  h3 {
+  }
+}
+
 
 .list-header-buttons {
   text-align: center;
@@ -50,28 +67,46 @@
 
 .list {
   position: relative;
-  background-color: black;
   height: auto;
   width: 200px;
   min-width: 200px;
   margin: 20px;
+  text-align: center;
   justify-content: center;
   text-align: center;
-  a {
-    font-size: 20px;
-    color: white;
-    &:hover {
-      text-decoration: none;
-      color: rgb(212, 212, 212);
-      transition: 0.2s;
-    }
-  }
 }
 
 .list-title {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   align-items: center;
   padding: 5px 0;
+  z-index: 99;
+  a {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 0 8px black;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.list-gradient {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  padding: 5px 0;
+  height: 150px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(255,255,255,0) 100%);
+}
+
+.list-user-nickname {
+  padding: 4px;
+  position: absolute;
+  text-align: center;
 }
 
 .list img {

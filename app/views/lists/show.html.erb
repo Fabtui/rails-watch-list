@@ -1,6 +1,13 @@
  <div class="list-header">
   <div class="list-header-title">
-    <h1><%= @list.name %></h1>
+    <div class="list-header-title-title">
+      <h1><%= @list.name.upcase %></h1>
+      <% unless @list.user == current_user %>
+      <h3>by <%= @list.user.nickname %></h3>
+      <% end %>
+    </div>
+    <div class="list-header-title-nickname">
+    </div>
   </div>
   <% if @list.user_id == current_user.id %>
     <div class="list-header-buttons">
