@@ -1,26 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
+user1 = User.create(email: "toto@mail.com", nickname: "toto", password: "azerty")
+user2 = User.create(email: "titi@mail.com", nickname: "titi", password: "azerty")
 
-# require 'json'
-# require 'open-uri'
+pulp = Movie.create(title: "Pulp Fiction",
+                    overview: "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
+                    poster_url: "https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+                    rating: "8.3/10",
+                    year: "1992",
+                    youtube_url: "https://www.youtube.com/embed/WSLMN6g_Od4",
+                    director: "Quentin Tarantino",
+                    actor: "John Travolta, Uma Thurman, Samuel L. Jackson",
+                    genre: "Crime, Drama",
+                    seen: false,
+                    user_id: 1)
 
-# def create_a_movie(url)
-#   response = open(url).read
-#   movie = JSON.parse(response)
-#   poster_path = movie["poster_path"]
+reservoir = Movie.create(title: "Reservoir Dogs",
+                    overview: "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                    poster_url: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                    rating: "8.9/10",
+                    year: "1994",
+                    youtube_url: "https://www.youtube.com/embed/ljjRZe6g5EM",
+                    director: "Quentin Tarantino",
+                    actor: "Harvey Keitel, Tim Roth, Michael Madsen",
+                    genre: "Crime, Drama, Thriller",
+                    seen: false,
+                    user_id: 1)
 
-#   Movie.create!(
-#     title: movie["original_title"],
-#     overview: movie["overview"],
-#     poster_url: "https://image.tmdb.org/t/p/w500#{poster_path}",
-#     rating: movie["vote_average"],
-#   )
-#   p movie["original_title"]
-# end
-
-# create_a_movie("https://api.themoviedb.org/3/movie/550?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-# create_a_movie("https://api.themoviedb.org/3/movie/500?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-# create_a_movie("https://api.themoviedb.org/3/movie/670?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-# create_a_movie("https://api.themoviedb.org/3/movie/530?api_key=e2c8e4b34d8775e5a745b29fe215157f")
-# create_a_movie("https://api.themoviedb.org/3/movie/600?api_key=e2c8e4b34d8775e5a745b29fe215157f")
+puts "#{User.count} users created"
+puts "#{Movie.count} movies created"
