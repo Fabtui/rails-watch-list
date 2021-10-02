@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  transform: translateY(-16px);
+}
+
+.header-button {
+  align-items: center;
+}
+
+.movie-index-header {
+text-align: center;
+align-items: center;
+  h1 {
+    padding: 0;
+    margin: 12px;
+    font-family: helvetica;
+    font-weight: 600;
+  }
+}
