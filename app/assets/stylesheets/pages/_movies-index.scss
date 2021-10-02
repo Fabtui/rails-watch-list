@@ -1,106 +1,66 @@
-.header {
-  display: flex;
-  justify-content: space-between;
+.movies-index-container {
+  width: 100%;
   padding: 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.movie-show-header {
-  h1 {
-    margin: 20px;
-    font-family: helvetica;
-    font-weight: 600;
+.movie-img {
+  position: relative;
+  img {
+    height: 300px;
+    width: 205px;
+    border: 1px solid rgba(0, 0, 0, 0.315);
   }
 }
 
 
 .movie-body {
   position: relative;
-  display: flex;
-}
-
-.movie-info {
-  width: 100%;
-  text-align: center;
-  padding: 6px 10px;
-  h6 {
-    font-size: 16px;
-    margin: 4px;
+  margin: 12px;
+  overflow: hidden;
+  height: 300px;
+  width: 205px;
+  &:hover {
+    cursor: pointer;
+    .movie-info {
+      opacity: 1;
+      transform: translateY(0%);
+      transition: 0.2s;
+    }
+  }
+  .movie-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 205px;
+    text-align: center;
+    align-items: center;
+    color: white;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.719);
+    opacity: 0;
+    transform: translateY(50%);
+    transition: 0.2s;
   }
 }
 
-.movie-overview {
-  margin-bottom: 30px;
-  padding: 0 20px;
-}
-
-.movie-img img {
-  height: 200px;
-  overflow: none;
-  object-fit: cover;
-}
-
 .card-title a {
-  font-weight: bold;
-  font-size: 20px;
-  color: black;
-  opacity: 0.6;
   &:hover {
-    opacity: 1;
     text-decoration: none;
   }
 }
 
-.movie-delete-button {
-  position: absolute;
-  margin-left: 16%;
-  bottom: 8px;
-}
-
-.index-movie-seen {
-  margin-left: 20%;
-  position: absolute;
-  bottom: 8px;
-}
-
 .index-movie-not-seen {
-  margin-left: 20%;
-  position: absolute;
-  bottom: 8px;
+  font-size: 24px;
+  color: $primary;
 }
 
-.header-button {
-  margin: 52px 0px;
+.movie-delete-button {
+  margin-left: 12px;
+  margin-bottom: 24px;
   text-align: center;
-}
-
-@media only screen and (max-width: 900px) {
-  .header {
-    padding: 0 8px;
-  }
-  #edit-button {
-  margin: 12px 0;
-}
-  .header-button {
-    margin: 0 4px;
-    button {
-    margin: 0 4px;
-    margin-top: 0;
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .header {
-    padding: 0 8px;
-  }
-  #edit-button {
-  margin: 12px 0;
-}
-  .header-button {
-    margin: 0 4px;
-    button {
-    margin: 0 4px;
-    margin-top: 0;
-    }
-  }
+  width: 205px;
 }

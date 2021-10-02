@@ -1,0 +1,32 @@
+<div class="movie-card-container">
+  <div class="movie-body">
+    <div class="movie-img">
+      <%= image_tag movie.poster_url , alt: "Poster" %>
+    </div>
+
+    <div class="movie-info">
+      <h5 class="card-title"><%= link_to movie.title, movie_path(movie) %></h5>
+      <h6><%= movie.year %></h6>
+      <h6><%= movie.genre %></h6>
+      <h6><%= movie.overview %></h6>
+      <% if movie.seen %>
+        <div class="index-movie-seen">
+          <i class="far fa-eye"></i>
+        </div>
+      <% else %>
+        <div class="index-movie-not-seen">
+          <i class="far fa-eye-slash"></i>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="movie-delete-button hidden" id="destroy-button">
+  <%= link_to movie_path(movie),
+          class: "btn btn-danger",
+          method: :delete,
+          data: { confirm: "Are you sure?" } do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
+  </div>
+</div>
