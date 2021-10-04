@@ -1,0 +1,36 @@
+.movie-card {
+  position: relative;
+  height: 300px;
+  width: 200px;
+  margin: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.212);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: 200px 300px;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+    .movie-title {
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0.2s;
+    }
+  }
+  .movie-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.596);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50%);
+    transition: 0.2s;
+    h1 {
+      color: white;
+      margin-top: 4px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}

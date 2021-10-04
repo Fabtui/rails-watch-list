@@ -6,22 +6,21 @@ import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
 
 
-import '../assets/stylesheets/application.scss';
+// import '../assets/stylesheets/application.scss';
 import App from './components/app';
 
-// import flatsReducer from './reducers/flats_reducer';
-// import selectedFlatReducer from './reducers/selected_flat_reducer';
+import moviesReducer from './reducers/movies_reducer';
+import activeMovieReducer from './reducers/active_movie_reducer';
 
 const reducers = combineReducers({
-  // flats: flatsReducer,
-  // selectedFlat: selectedFlatReducer
+  movies: moviesReducer,
+  activeMovie: activeMovieReducer,
 });
 
 const middlewares = applyMiddleware(logger, reduxPromise);
 
 ReactDOM.render(
-  console.log('ok')
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, middlewares)}>
     <App />
   </Provider>,
   document.getElementById('root'));
