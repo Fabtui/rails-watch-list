@@ -1,20 +1,5 @@
 <div class="header">
-  <div class="movie-index-header">
-    <h1>Movies</h1>
-  </div>
-  <div class="header-button">
-    <button type="button" class="btn btn-primary header-btn"><%= link_to new_movie_path do %>
-      <i class="fas fa-plus"></i>
-    <% end %>
-    </button>
-    <button type="button" class="btn btn-danger header-btn" id="edit-button"><%= link_to "#" do %>
-      <i class="fas fa-trash"></i>
-    <% end %>
-    </button>
-  </div>
-</div>
 
-<div class="container">
   <div class="search-container">
     <div class="search-input">
     <%= form_tag movies_path, method: :get do %>
@@ -28,6 +13,17 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
     </div>
     <% end %>
+  </div>
+
+  <div class="index-header-button">
+    <button type="button" class="btn btn-primary header-btn"><%= link_to new_movie_path do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+    </button>
+    <button type="button" class="btn btn-danger header-btn" id="edit-button"><%= link_to "#" do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+    </button>
   </div>
 </div>
 
