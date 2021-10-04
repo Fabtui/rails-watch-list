@@ -15,7 +15,6 @@ import activeMovieReducer from './reducers/active_movie_reducer';
 const reducers = combineReducers({
   movies: moviesReducer,
   activeMovie: activeMovieReducer,
-  // selectedMovie: selectedMovieReducer,
 });
 
 const middlewares = applyMiddleware(logger, reduxPromise);

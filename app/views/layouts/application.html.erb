@@ -11,7 +11,6 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'movies' %>
   </head>
 
   <body>
@@ -24,7 +23,10 @@
   </div>
 
     <%= yield %>
+
   <p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>
+
+    <%= javascript_pack_tag 'movies' %>
   </body>
 </html>
