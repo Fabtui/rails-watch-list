@@ -12,7 +12,6 @@ class ActiveMovie extends Component {
     }
     return (
         <div className="activemovie-container">
-        <div className='movie-show-card'>
           <div className="movie-poster">
             <img src={this.props.activeMovie.poster_url}></img>
           </div>
@@ -29,7 +28,6 @@ class ActiveMovie extends Component {
               <h3>{this.props.activeMovie.rating}</h3>
             </div>
           </div>
-        </div>
         </div>
     )
   }
