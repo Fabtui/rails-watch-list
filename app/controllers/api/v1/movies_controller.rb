@@ -1,6 +1,14 @@
 class Api::V1::MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    # sql_query = " \
+    #   movies.title ILIKE :query \
+    #   OR movies.overview ILIKE :query \
+    #   OR movies.actor ILIKE :query \
+    #   OR movies.director ILIKE :query \
+    # "
+    # @movies = @user_movies.where(sql_query, query: "%#{params[:query]}%")
+    @user_movies = Movie.where(user_id: current_user.id)
+    @movies = @user_movies.order("title ASC")
     render json: @movies
   end
 

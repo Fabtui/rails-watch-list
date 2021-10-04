@@ -1,10 +1,3 @@
-.movie-app-container {
-  margin-top: 20px;
-  display: flex;
-  width: 100%;
-  padding: 0 5%;
-}
-
 .activemovie-container {
   background-color: grey;
   height: 100vh;
@@ -12,6 +5,14 @@
   position: sticky !important; /* !important to override Gmaps inline CSS */
   top: 0 !important;
 }
+
+.movie-app-container {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  padding: 0 5%;
+}
+
 
 .movie-list {
   width: 60%;

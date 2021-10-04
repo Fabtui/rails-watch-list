@@ -13,7 +13,7 @@ export function setMovies() {
 }
 
 export default function selectMovie(movie) {
-  const promise = fetch(`/api/v1/movies/${movie}`)
+  const promise = fetch(`/api/v1/movies/${movie.id}`)
     .then(response => response.json())
   return {
     type: MOVIE_SELECTED,

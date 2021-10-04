@@ -1,12 +1,12 @@
 .movie-card {
   position: relative;
-  height: 300px;
-  width: 200px;
+  height: 240px;
+  width: 160px;
   margin: 4px;
   border: 1px solid rgba(0, 0, 0, 0.212);
   background-position:center;
   background-repeat: no-repeat;
-  background-size: 200px 300px;
+  background-size: 160px 240px;
   overflow: hidden;
   &:hover {
     cursor: pointer;
