@@ -31,10 +31,12 @@
   </div>
 </div>
 
+<% comment do %>
 <div class="movies-index-container">
   <% @movies.each do |movie| %>
     <%= render 'shared/movie_card', movie: movie %>
   <% end %>
 </div>
+<% comment end %>
 
   <div id="root"></div>
