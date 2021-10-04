@@ -27,5 +27,5 @@ document.addEventListener("turbolinks:load", function() {
   displayArrow();
   arrowScroll();
   youtubeEdit();
-  // initSortable();
+  initSortable();
 });

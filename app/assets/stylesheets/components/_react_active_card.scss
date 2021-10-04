@@ -1,6 +1,6 @@
 .activemovie-container {
   width: 50%;
-  background-color: black;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 86%);
   // box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: 0.9);
   text-align: center;
   padding: 4px;
@@ -16,11 +16,13 @@
 .active-movie-title a {
   font-family: helvetica;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.815);
+  color: rgba(0, 0, 0, 0.705);
   font-size: 24px;
   font-weight: 600;
+  transition: 0.2s;
   &:hover {
-    color: white;
+    transition: 0.2s;
+    color: black;
     text-decoration: none;
   }
 }
@@ -30,7 +32,7 @@
   width: 100%;
   h3 {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.801);
+    color: rgba(0, 0, 0, 0.808);
   }
 }
 
@@ -38,5 +40,5 @@
 .active-movie-overview h2 {
   margin-top: 12px;
   font-size: 20px;
-  color: white;
+  color: rgba(0, 0, 0, 0.911);
 }
