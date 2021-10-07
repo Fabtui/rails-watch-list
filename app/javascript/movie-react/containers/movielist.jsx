@@ -34,8 +34,9 @@ class MovieList extends Component {
     const [searchTerm, setSearchTerm] = "";
     const pulp = "Pulp Fiction"
     return (
+      <div>
+        <input id="search-bar" type="text" placeholder="Find a movie" onChange={this.handleUpdate}/>
         <div className="movie-list">
-          <input type="text" onChange={this.handleUpdate}/>
           {this.props.movies.filter((val) => {
             if (searchTerm == "") {
               return val
@@ -44,6 +45,7 @@ class MovieList extends Component {
             }
           }).map((movie) => <MovieCard movie={movie} key={movie.title} selectMovie={this.props.selectMovie}/>)}
         </div>
+      </div>
     )
   }
 }
