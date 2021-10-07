@@ -13,9 +13,11 @@
   padding: 0 5%;
 }
 
+.movie-list-container {
+  width: 60%;
+}
 
 .movie-list {
-  width: 60%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
