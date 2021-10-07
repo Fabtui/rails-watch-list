@@ -1,6 +1,7 @@
 <div class="header">
 
   <div class="search-container">
+  <% comment do %>
     <div class="search-input">
     <%= form_tag movies_path, method: :get do %>
       <%= text_field_tag :query,
@@ -9,6 +10,7 @@
         placeholder: "Find a movie"
       %>
     </div>
+  <% end %>
     <div class="search-button">
       <%= submit_tag "Search", class: "btn btn-primary" %>
     </div>
