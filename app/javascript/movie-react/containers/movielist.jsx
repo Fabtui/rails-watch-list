@@ -7,6 +7,20 @@ import MovieCard from './moviecard';
 
 
 class MovieList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      term: ""
+    }
+  }
+
+  handleUpdate = (event) => {
+    this.setState({
+      term: event.target.value
+    });
+    // this.props.searchFunction(event.target.value)
+  }
 
   componentWillMount() {
     this.props.setMovies();
@@ -21,11 +35,11 @@ class MovieList extends Component {
     const pulp = "Pulp Fiction"
     return (
         <div className="movie-list">
-          <input type="text" onChange={(event) => {setSearchTerm(event.target.value);}}/>
+          <input type="text" onChange={this.handleUpdate}/>
           {this.props.movies.filter((val) => {
             if (searchTerm == "") {
               return val
-            } else if (val.title.toLowerCase().includes(pulp.toLowerCase())) {
+            } else if (val.title.toLowerCase().includes(this.state.term.toLowerCase())) {
               return val
             }
           }).map((movie) => <MovieCard movie={movie} key={movie.title} selectMovie={this.props.selectMovie}/>)}
