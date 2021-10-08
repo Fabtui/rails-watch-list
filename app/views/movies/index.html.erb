@@ -1,7 +1,7 @@
 <div class="header">
 
-  <div class="search-container">
   <% comment do %>
+  <div class="search-container">
     <div class="search-input">
     <%= form_tag movies_path, method: :get do %>
       <%= text_field_tag :query,
@@ -10,15 +10,15 @@
         placeholder: "Find a movie"
       %>
     </div>
-  <% end %>
+    <% end %>
+  </div>
     <div class="search-button">
       <%= submit_tag "Search", class: "btn btn-primary" %>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 
   <div class="index-header-button">
-    <button type="button" class="btn btn-primary header-btn"><%= link_to new_movie_path do %>
+    <button id="add-button" type="button" class="btn btn-primary header-btn"><%= link_to new_movie_path do %>
       <i class="fas fa-plus"></i>
     <% end %>
     </button>

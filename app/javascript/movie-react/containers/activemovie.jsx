@@ -20,7 +20,7 @@ class ActiveMovie extends Component {
           </div>
           <div className="active-movie-infos">
             <div className="active-movie-title">
-              <a href={link} class="active">{this.props.activeMovie.title}</a>
+              <a href={link} className="active">{this.props.activeMovie.title}</a>
             </div>
             <div className="active-movie-overview">
               <h2>{this.props.activeMovie.overview}</h2>
