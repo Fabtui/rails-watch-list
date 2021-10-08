@@ -1,0 +1,10 @@
+#search-bar {
+  width: 95%;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-radius: 2px;
+  padding: 4px 8px;
+  &:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
